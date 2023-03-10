@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+
+    <script> //내가 작성한 스크립트 마지막에
+
+        function winOpen(url) {
+            window.open(url, 'child', 'location=no, status=no, width=500, height=500, scrollbar=no')
+        };
+
+        $(document).ready(function(){
+
+            //메인 슬라이드
+            $('.slider').bxSlider({
+                auto: false,
+                autoControls: true,
+                stopAutoOnClick: true,
+                pager: false,
+            });
+
+            //탑으로 올라가는 버튼
+            $('#top').click(function(){
+                $('html, body').stop().animate({scrollTop:0});
+            });
+
+            
+
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#sec02">카페 소개</a></li>
+                    <li><a href="#sec03">오시는 길</a></li>
+                    <li><a href="#sec04">이 달의 추천</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="sec01">
+                <div class="slider">
+                    <div><img src="images/header.jpg"></div>
+                    <div><img src="images/header.jpg"></div>
+                </div>
+            </section>
+            <section id="sec02">
+                <h2>카페 소개</h2>
+                <div>
+                    <img src="images/coffee.jpg">
+                    <div>
+                        <h3>영업 시간 : 오전 9시 ~ 밤 10시</h3>
+                        <h3>휴무 : 매주 수요일</h3>
+                        <i>(수요일이 공휴일인 경우 수요일 영업, 다음날 휴무)</i>
+                    </div>
+                </div>
+            </section>
+            <section id="sec03">
+                <h2>오시는 길</h2>
+                <div>
+                    <a href="#" onclick="winOpen('https://map.naver.com/v5/entry/place/13044022?placePath=%2Fhome&entry=plt&c=15,0,0,0,dh')">
+                    <img src="images/map.jpg"></a>
+
+                    <div>
+                        <h3>서귀포시 안덕면 사계리 ㅇㅇㅇㅇ-ㅇㅇㅇ</h3>
+                        <h3>제주 올레 10코스 산방산 근처</h3>
+                    </div>
+                </div>
+            </section>
+            <section id="sec04">
+                <h2>이 달의 추천</h2>
+                    <div>
+                        <div>
+                        <h3>핸드드립 아이스커피</h3>
+                        <ol>
+                            <li>1인분 기준으로 서버에 각얼음 5조각(한조각의 20cc) 넣고 추출을 시작한다.</li>
+                            <li>평상시 보다 원두의 양은 2배 정도 (20g)의 추출액은 얼음 포함해서 200cc까지 내린다.</li>
+                            <li>아이스 잔에 얼음 6-7개 섞어서 시원하게 마신다.</li>
+                        </ol>
+                    </div>
+                    <img src="images/ice.jpg">
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>My times with Coffee</p>
+        </footer>
+    </div>
+    <div id="top">△</div>
+</body>
+</html>
